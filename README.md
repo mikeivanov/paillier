@@ -56,9 +56,8 @@ License and Copyright
 LGPL v3, see [LICENSE][3]
 (C) 2011 Mike Ivanov
 
-References
-----------
+
 [1]: http://code.google.com/p/thep/
 [2]: http://readthedocs.org/docs/nose/en/latest/index.html
-[3]: ./LICENSE
+[3]: https://github.com/mikeivanov/paillier/LICENSE
 
