@@ -42,7 +42,7 @@ def is_probably_prime(possible, k=None):
         if possible % i == 0:
             return False
     for i in xrange(k):
-        test = random.randrange(2, possible) | 1
+        test = random.randrange(2, possible - 1) | 1
         if rabin_miller_witness(test, possible):
             return False
     return True
