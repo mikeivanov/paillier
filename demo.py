@@ -25,3 +25,6 @@ print "Decrypting cz..."
 z = decrypt(priv, pub, cz)
 print "z =", z
 
+print "Computing decrypt((cz + 2) * 3) ..."
+print "result =", decrypt(priv, pub,
+                          e_mul_const(pub, e_add_const(pub, cz, 2), 3))

@@ -47,3 +47,25 @@ def test_e_add():
             s = paillier.decrypt(priv, pub, cs)
             assert a + b == s
         
+def test_e_add_const():
+    for i in range(5):
+        priv, pub = paillier.generate_keypair(128)
+        for j in range(5):
+            a = long(random.randint(0, 1000000))
+            c = paillier.encrypt(pub, a)
+            for n in range(0, 11):
+                cs = paillier.e_add_const(pub, c, n)
+                s = paillier.decrypt(priv, pub, cs)
+                assert a + n == s
+        
+def test_e_mul_const():
+    for i in range(5):
+        priv, pub = paillier.generate_keypair(128)
+        for j in range(5):
+            a = long(random.randint(0, 1000000))
+            c = paillier.encrypt(pub, a)
+            for n in range(0, 11):
+                cs = paillier.e_mul_const(pub, c, n)
+                s = paillier.decrypt(priv, pub, cs)
+                assert a * n == s
+
