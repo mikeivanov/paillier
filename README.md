@@ -58,7 +58,7 @@ Usage
     Python 2.7.1 (r271:86832, Jun 16 2011, 16:59:05)
     Type "copyright", "credits" or "license" for more information.
 
-    In [1]: from paillier import *
+    In [1]: from paillier.paillier import *
 
     In [2]: priv, pub = generate_keypair(128)
 
