@@ -33,15 +33,27 @@ def modpow(base, exponent, modulus):
     return result
 
 class PrivateKey(object):
+
     def __init__(self, p, q, n):
         self.l = (p-1) * (q-1)
         self.m = invmod(self.l, n)
 
+    def __repr__(self):
+        return '<PrivateKey: %s %s>' % (self.l, self.m)
+
 class PublicKey(object):
+
+    @classmethod
+    def from_n(cls, n):
+        return cls(n)
+
     def __init__(self, n):
         self.n = n
         self.n_sq = n * n
         self.g = n + 1
+
+    def __repr__(self):
+        return '<PublicKey: %s>' % self.n
 
 def generate_keypair(bits):
     p = primes.generate_prime(bits / 2)
