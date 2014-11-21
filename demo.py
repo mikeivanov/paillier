@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from paillier import *
+from paillier.paillier import *
 
 print "Generating keypair..."
 priv, pub = generate_keypair(512)
